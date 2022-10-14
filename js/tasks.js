@@ -19,7 +19,9 @@ arr.push(function(){
 
 arr[2](); // ['a', 'b', function]; */
 
-function sumInput() {
+// 4
+
+/* function sumInput() {
     let arr = [];
     let sum = 0;
     function enterValue() {
@@ -40,4 +42,23 @@ function sumInput() {
     return sum;
 }
 
-console.log(sumInput());
+console.log(sumInput()); */
+
+// 5
+
+arr = [1, -2, 3, 4, -9, 6];
+
+function getMaxSubSum(arr) {
+    let maxSum = 0;
+    
+    for(let i = 0; i < arr.length; i++){
+        let sumFixedStart = 0;
+        for(let j = i; j < arr.length; j++){
+            sumFixedStart += arr[j];
+            maxSum = Math.max(maxSum, sumFixedStart);
+        }
+    }
+
+    return maxSum;
+}
+console.log(getMaxSubSum([-1, 2, 3, -9]));
